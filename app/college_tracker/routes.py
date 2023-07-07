@@ -134,3 +134,7 @@ def result():
     applications = Application.query.filter_by(user_id=user).all()
     return render_template('result.html' , applications=applications)
 #Route for editing an application
+@tracker.route('/edit')
+@login_required
+def edit():
+    pass
