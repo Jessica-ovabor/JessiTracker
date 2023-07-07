@@ -1,0 +1,95 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>College Tracker | Dashboard</title>
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+   
+            table{
+                border-collapse: collapse;
+                width: 100%;
+                padding:0;
+                
+        
+            }
+            th,td{
+                background-color:  #F5F5F5;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                cursor: pointer;
+            }
+            td:hover{
+                background-color: #F5FEFD;
+            }
+        
+            td:nth-child(odd) {
+                background-color: #FDFCFA;
+            }
+            
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>College Tracker</h1>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="#">Add College</a></li>
+                <li><a href="#">View Colleges</a></li>
+                <li><a href="#">Search Colleges</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2>Dashboard</h2>
+            <p>Welcome to the dashboard</p>
+            <hr>
+            <table>
+                    <thead>
+                      <tr>  
+                        <th>College Name</th>
+                        <th>Application Fee</th>
+                        <th>Deadline</th>
+                        <th>Waiver</th>
+                        <th>Degree</th>
+                        <th>Country</th>
+                        <th>Submitted Document</th>
+                        <th>Pending Document</th>
+                        <th>Requirement</th>
+                        <th>Status</th>
+                            
+
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for application in applications %}
+                      <tr>
+                        
+                        <td>{{ application.college_name }}</td>
+                        <td>{{ application.application_fee }}</td>
+                        <td>{{ application.deadline }}</td>
+                        <td>{{ application.waiver }}</td>
+                        <td>{{ application.degree }}</td>
+                        <td>{{ application.country }}</td>
+                        <td>{{ application.submitted_document }}</td>
+                        <td>{{ application.pending_document }}</td>
+                        <td>{{ application.requirement }}</td>
+                        <td>{{ application.status }}</td>
+
+                        
+                      
+                      </tr>
+                      
+                        {% endfor %}
+                    </tbody>
+                  </table>                
+        </div>
+        <div class="footer">
+            <p>College Tracker &copy; 2022</p>
+        </div>
+    </div>
+</body>
+</html>
